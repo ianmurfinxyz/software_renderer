@@ -72,7 +72,7 @@ For the next version of the project I want to implement:
 
 [Resources]
 
-The following (in no particulary order) is a selection of resources I found most 
+The following (in no particular order) is a selection of resources I found most 
 helpful when researching for this project:
 
 [1]: http://www.cs.bath.ac.uk/~pjw/NOTES/75-ACG/ch6-projective.pdf

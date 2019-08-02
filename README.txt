@@ -21,7 +21,7 @@ advanced effects are implemented in this version.
 The following link is to a video demonstration of a rendering of a basic 3D 
 scene.
 
-[link to youtube channel video]
+https://www.youtube.com/watch?v=ZjEFwCRI4no&feature=youtu.be
 
 note: the file 'demo' in the repository is the compiled demonstration being 
 shown in the video linked above.

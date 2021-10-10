@@ -1,16 +1,16 @@
 #ifndef _LOOPTIME_H_
 #define _LOOPTIME_H_
 
-/* Enforces including of interface files -> the preprocessor will replace all function 
+/* Enforces including of interface files -> the preprocessor will replace all function
  * names in this file and in looptime.c with the defines below. If this header is not
  * included in a src file which uses this module then the function names will be
  * unrecognised since they would of not been changed in the src file, only in looptime.h
  * and looptime.c
- * 
- * note: to use the module you should call the real function names not the defined 
+ *
+ * note: to use the module you should call the real function names not the defined
  * replacements, e.g. call start_frame not looptime_start_frame. calling the latter
  * would defeat the purpose of this section.
- */ 
+ */
 #define start_frame looptime_start_frame
 #define end_frame looptime_end_frame
 #define init_loop_data looptime_init_loop_data

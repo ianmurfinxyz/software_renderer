@@ -1,10 +1,8 @@
-
 #include <SDL2/SDL.h>
 #include <SDL2/SDL_ttf.h>
 #include "looptime.h"
 #include "Renderer.h"
 #include "Mesh.h"
-#include "Matrix4.h"
 #include "grutil.h"
 #include "Body.h"
 #include "Camera.h"
@@ -16,12 +14,12 @@ int main(int argc, char* argv[]){
 
     if(SDL_Init(SDL_INIT_VIDEO) != 0){
         SDL_Log("Unable to initialise SDL: %s", SDL_GetError());
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     if(TTF_Init() == -1){
         printf("error: Failed to initialise SDL_ttf: %s\n", TTF_GetError());
-        return 1;
+        exit(EXIT_FAILURE);
     }
 
     SDL_Window* p_window = NULL;
@@ -36,6 +34,7 @@ int main(int argc, char* argv[]){
     
     if(p_window == NULL){
         SDL_Log("Failed to create window: %s", SDL_GetError());
+        exit(EXIT_FAILURE);
     }
 
     SDL_Surface* p_canvas = SDL_GetWindowSurface(p_window);
@@ -44,6 +43,7 @@ int main(int argc, char* argv[]){
     SDL_Color fontColor = {255, 41, 80};
     if(!font){
         printf("error: Failed to load font file: %s\n", TTF_GetError());
+        exit(EXIT_FAILURE);
     }
 
     gr::Renderer renderer(p_window, 800, 600);
@@ -87,26 +87,23 @@ int main(int argc, char* argv[]){
 
         SDL_Event event;
         while(SDL_PollEvent(&event)){
-            switch(event.type){
-                case SDL_KEYDOWN:
-                    switch(event.key.keysym.sym){
-                        case SDLK_ESCAPE:
-                            is_running = false;
-                            break;
-                        case SDLK_1:
-                            renderer.setModeDrawSceneBuffer();
-                            break;
-                        case SDLK_2:
-                            renderer.setModeDrawDepthBuffer();
-                            break;
-                    }
-                break;
+            if(event.type == SDL_KEYDOWN){
+                switch(event.key.keysym.sym){
+                    case SDLK_ESCAPE:
+                        is_running = false;
+                        break;
+                    case SDLK_1:
+                        renderer.setModeDrawSceneBuffer();
+                        break;
+                    case SDLK_2:
+                        renderer.setModeDrawDepthBuffer();
+                        break;
+                }
             }
             scene.handleInput(event, dt);
         }
 
         renderer.clear();
-
         scene.drawScene(renderer);
         
         // output FPS...
@@ -117,6 +114,7 @@ int main(int argc, char* argv[]){
         SDL_Surface* fpssurf = TTF_RenderText_Solid(font, buffer, fontColor);
         if(fpssurf == NULL){
             printf("error: Failed to create fpssurf %s\n", TTF_GetError());
+            exit(EXIT_FAILURE);
         }
         SDL_BlitSurface(fpssurf, NULL, p_canvas, NULL);
 

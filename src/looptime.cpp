@@ -2,8 +2,6 @@
  * Gameloop Timing Module
  * 
  * Author: Ian Murfin
- * 
- * 
  */
 
 
@@ -16,9 +14,7 @@
 #define __DEBUG
 
 #include <stdio.h>
-#include <stdlib.h>
 #include <time.h>
-#include <assert.h>
 #include <string.h>
 #include <stdbool.h>
 

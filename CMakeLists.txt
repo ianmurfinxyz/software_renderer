@@ -9,7 +9,7 @@ set(SOURCE
         src/Color.cpp
         src/DepthBuffer.cpp
         src/grutil.cpp
-        src/looptime.c
+        src/looptime.cpp
         src/main.cpp
         src/Matrix4.cpp
         src/Mesh.cpp
@@ -18,5 +18,6 @@ set(SOURCE
         src/Vector3.cpp)
 
 add_executable(demo ${SOURCE})
-target_include_directories(demo PUBLIC include)
-target_link_libraries(demo -lSDL -lSDL2)
+target_include_directories(demo PUBLIC include /usr/include)
+target_link_directories(demo PUBLIC /usr/lib)
+target_link_libraries(demo -lSDL2 -lSDL2_ttf)

@@ -258,6 +258,7 @@ int init_loop_data(LoopTimeData* p_ltd){
     p_ltd->dt.tv_sec = p_ltd->dt.tv_nsec = 0;
     p_ltd->dt_t.tv_sec = 0; p_ltd->dt_t.tv_nsec = 0;
     zero_timespec_array(p_ltd->dt_r_his, DT_HIS_CNT);
+    return 0;
 }
 
 /* Enable frame rate governing.

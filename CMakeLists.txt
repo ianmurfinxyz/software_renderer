@@ -18,6 +18,10 @@ set(SOURCE
         src/Vector3.cpp)
 
 add_executable(demo ${SOURCE})
-target_include_directories(demo PUBLIC include /usr/include)
-target_link_directories(demo PUBLIC /usr/lib)
-target_link_libraries(demo -lSDL2 -lSDL2_ttf)
+target_include_directories(demo PUBLIC include)
+
+if($ENV{MINGW64})
+    target_link_libraries(demo -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf)
+else()
+    target_link_libraries(demo -lSDL2 -lSDL2_ttf)
+endif()

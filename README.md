@@ -31,17 +31,17 @@ shown in the video linked above.
 The pipeline is kept as simple as possible. The following details the stages of
 the pipeline and the algorithms used in each.
 
-(1): Vertex Shader: Hardcoded (i.e. not programmable), simply transforms local 
+1. Vertex Shader: Hardcoded (i.e. not programmable), simply transforms local 
   position vectors by a world-view-projection matrix (WVP matrix).
 
-(2): Clipping: Uses the Sutherland-Hodgman algorithm to clip all geometry 
+2. Clipping: Uses the Sutherland-Hodgman algorithm to clip all geometry 
   against the view (camera) frustrum.
 
-(3): Perspective Divide.
+3. Perspective Divide.
 
-(4): Backface Culling: Uses the shoelace algorithm.
+4. Backface Culling: Uses the shoelace algorithm.
 
-(5): Triangle Rasterisation: Uses edge equations (half-space algorithm). 
+5. Triangle Rasterisation: Uses edge equations (half-space algorithm). 
   Interpolates vertex properties using barycentric coordinates. Uses a depth
   buffer to sort draw order.
 
@@ -114,12 +114,12 @@ in the MSYS2 terminal.
 The following (in no particular order) is a selection of resources I found most 
 helpful when researching for this project:
 
-[1]: http://www.cs.bath.ac.uk/~pjw/NOTES/75-ACG/ch6-projective.pdf
-[2]: https://www.uni-obuda.hu/journal/Mileff_Nehez_Dudra_63.pdf
-[3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.162.1859&rep=rep1&type=pdf
-[4]: http://www.cs.gettysburg.edu/~ilinkin/courses/Fall-2014/cs373/handouts/papers/sh-rpc-74.pdf
-[5]: Introduction to 3G Game Programming with DirectX10 by Frank D.Luna
-[6]: Game Engine Architecture by Jason Gregory
+1. http://www.cs.bath.ac.uk/~pjw/NOTES/75-ACG/ch6-projective.pdf
+2. https://www.uni-obuda.hu/journal/Mileff_Nehez_Dudra_63.pdf
+3. http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.162.1859&rep=rep1&type=pdf
+4. http://www.cs.gettysburg.edu/~ilinkin/courses/Fall-2014/cs373/handouts/papers/sh-rpc-74.pdf
+5. Introduction to 3G Game Programming with DirectX10 by Frank D.Luna
+6. Game Engine Architecture by Jason Gregory
 
 ## License
 

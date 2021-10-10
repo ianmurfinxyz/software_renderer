@@ -1,6 +1,5 @@
-================================================================================
-                    Real-Time Software Renderer in C++
-================================================================================
+
+# Real-Time Software Renderer in C++
 
 This project is a real-time software renderer written from scratch in C++. The 
 renderer makes no use of Opengl or DirectX (or any hardware acceleration) 
@@ -26,7 +25,7 @@ https://www.youtube.com/watch?v=ZjEFwCRI4no&feature=youtu.be
 note: the file 'demo' in the repository is the compiled demonstration being 
 shown in the video linked above.
 
-[pipeline]
+## Pipeline
 
 The pipeline is kept as simple as possible. The following details the stages of
 the pipeline and the algorithms used in each.
@@ -45,7 +44,7 @@ the pipeline and the algorithms used in each.
   Interpolates vertex properties using barycentric coordinates. Uses a depth
   buffer to sort draw order.
 
-[features]
+## Features
 
 - Custom math library (Matrices, Vectors) including functions to construct 
   required transformation matrices.
@@ -55,7 +54,7 @@ the pipeline and the algorithms used in each.
 - Switchable rendering modes: draw depth buffer or back buffer.
 - Interactive scene: transformable camera and objects.
 
-[todo]
+## Todo
 
 For the next version of the project I want to implement:
 
@@ -65,12 +64,12 @@ For the next version of the project I want to implement:
 - lighting and shading.
 - Normal mapping.
 
-[dependecies]
+## Dependencies
 
 - SDL2
 - SDL2_ttf
 
-[Resources]
+## Resources
 
 The following (in no particular order) is a selection of resources I found most 
 helpful when researching for this project:
@@ -82,7 +81,7 @@ helpful when researching for this project:
 [5]: Introduction to 3G Game Programming with DirectX10 by Frank D.Luna
 [6]: Game Engine Architecture by Jason Gregory
 
-[License]
+## License
 
 MIT License
 

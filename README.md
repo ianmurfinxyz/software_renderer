@@ -1,4 +1,3 @@
-
 # Real-Time Software Renderer in C++
 
 This project is a real-time software renderer written from scratch in C++. The 
@@ -16,6 +15,8 @@ strip the problem down into its most simple of form. Thus this initial version
 implements only those aspects of the pipeline of core importance to getting an 
 image on screen. No lighting, textures, normal mapping or any other more 
 advanced effects are implemented in this version.
+
+![scene capture](img/capture.png)
 
 The following link is to a video demonstration of a rendering of a basic 3D 
 scene.

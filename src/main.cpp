@@ -40,7 +40,7 @@ int main(int argc, char* argv[]){
 
     SDL_Surface* p_canvas = SDL_GetWindowSurface(p_window);
 
-    TTF_Font* font = TTF_OpenFont("SourceCodePro-Regular.ttf", 16);
+    TTF_Font* font = TTF_OpenFont("assets/SourceCodePro-Regular.ttf", 16);
     SDL_Color fontColor = {255, 41, 80};
     if(!font){
         printf("error: Failed to load font file: %s\n", TTF_GetError());

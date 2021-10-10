@@ -69,6 +69,45 @@ For the next version of the project I want to implement:
 - SDL2
 - SDL2_ttf
 
+## Compilation
+
+The project contains a CMakeLists.txt file which I setup to be used with my CLion project.
+You can also just compile it from the command line as detailed below (it is far easier on Linux).
+
+### Linux
+
+Just install SDL2 and SDL2_ttf via your package manager, on arch linux this is done 
+via pacman like,
+
+```shell
+pacman -s sdl2 sdl2_ttf
+```
+
+then cd into the project directory and either run cmake,
+
+```shell
+cmake .
+make
+```
+
+or just run the compilation command manually,
+
+```shell
+g++ ./src/*.cpp -I include -lSDL2 -lSDL2_ttf -o demo
+```
+
+### Windows
+
+Windows requires an environment to be setup for the compilation, either visual studio 
+or Mingw. On my machine I installed MSYS2 and installed SDL2 and SDL2_ttf into that. Once
+done you can run the command,
+
+```shell
+g++ ./src/*.cpp -I include -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -o demo
+```
+
+in the MSYS2 terminal.
+
 ## Resources
 
 The following (in no particular order) is a selection of resources I found most 

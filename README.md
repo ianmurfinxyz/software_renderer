@@ -65,6 +65,17 @@ For the next version of the project I want to implement:
 - lighting and shading.
 - Normal mapping.
 
+## Controls
+
+The scene camera moves on a spherical coordinate system, rotating about the center of the scene.
+
+Use:
+- Arrows LEFT/RIGHT/UP/DOWN to rotate around the scene.
+- 'f' and 'b' to move forward and backward respectively (i.e. towards and away from the scene center).
+- 'o' and 'p' to adjust the field of view (FOV) to make the view more orthographic and more perspective respectively.
+- '1' and '2' to switch rendering modes between the color buffer and the depth buffer.
+- 'escape' to exit. (the cross on the window is not hooked up).
+
 ## Compilation
 
 ### Linux

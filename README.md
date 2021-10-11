@@ -65,20 +65,12 @@ For the next version of the project I want to implement:
 - lighting and shading.
 - Normal mapping.
 
-## Dependencies
-
-- SDL2
-- SDL2_ttf
-
 ## Compilation
-
-The project contains a CMakeLists.txt file which I setup to be used with my CLion project.
-You can also just compile it from the command line as detailed below (it is far easier on Linux).
 
 ### Linux
 
-Just install SDL2 and SDL2_ttf via your package manager, on arch linux this is done 
-via pacman like,
+The project has dependencies on SDL2 and SDL2_ttf only, thus install those via your package manager, which
+on arch linux this is done via pacman:
 
 ```shell
 pacman -s sdl2 sdl2_ttf
@@ -97,11 +89,20 @@ or just run the compilation command manually,
 g++ ./src/*.cpp -I include -lSDL2 -lSDL2_ttf -o demo
 ```
 
+**note: the libraries must be linked in that specific order.**
+
 ### Windows
 
 Windows requires an environment to be setup for the compilation, either visual studio 
-or Mingw. On my machine I installed MSYS2 and installed SDL2 and SDL2_ttf into that. Once
-done you can run the command,
+or Mingw (I have only compiled this project with the latter). On my machine I installed 
+MSYS2 and installed SDL2 and SDL2_ttf into that. Once done you can run cmake:
+
+```shell
+cmake -D WIN_MING .
+make
+```
+
+or just run the shell command.
 
 ```shell
 g++ ./src/*.cpp -I include -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -o demo

@@ -20,7 +20,7 @@ set(SOURCE
 add_executable(demo ${SOURCE})
 target_include_directories(demo PUBLIC include)
 
-if(WIN64_MING)
+if(WIN_MING)
     target_link_libraries(demo -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf)
 else()
     target_link_libraries(demo -lSDL2 -lSDL2_ttf)

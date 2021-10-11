@@ -2,8 +2,8 @@
 
 using namespace gr;
 
-Scene::Scene(gr::Camera* pCam) : pCam(pCam), angVel(1.5f * 3.141592654), 
-    radialVel(8.f), fov(45.f), fovVel(10.f){
+Scene::Scene(gr::Camera* pCam) : pCam(pCam), angVel(8.5f * 3.141592654),
+    radialVel(60.f), fov(45.f), fovVel(10.f){
 }
 
 void Scene::setCamera(gr::Camera* pCamera){

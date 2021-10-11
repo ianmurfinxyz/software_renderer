@@ -1,4 +1,4 @@
-# Real-Time Software Renderer in C++
+# Real-Time Software Renderer
 
 This project is a real-time software renderer written from scratch in C++. The 
 renderer makes no use of Opengl or DirectX (or any hardware acceleration) 

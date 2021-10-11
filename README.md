@@ -31,17 +31,17 @@ shown in the video linked above.
 The pipeline is kept as simple as possible. The following details the stages of
 the pipeline and the algorithms used in each.
 
-(1): Vertex Shader: Hardcoded (i.e. not programmable), simply transforms local 
+1. Vertex Shader: Hardcoded (i.e. not programmable), simply transforms local 
   position vectors by a world-view-projection matrix (WVP matrix).
 
-(2): Clipping: Uses the Sutherland-Hodgman algorithm to clip all geometry 
+2. Clipping: Uses the Sutherland-Hodgman algorithm to clip all geometry 
   against the view (camera) frustrum.
 
-(3): Perspective Divide.
+3. Perspective Divide.
 
-(4): Backface Culling: Uses the shoelace algorithm.
+4. Backface Culling: Uses the shoelace algorithm.
 
-(5): Triangle Rasterisation: Uses edge equations (half-space algorithm). 
+5. Triangle Rasterisation: Uses edge equations (half-space algorithm). 
   Interpolates vertex properties using barycentric coordinates. Uses a depth
   buffer to sort draw order.
 
@@ -70,17 +70,56 @@ For the next version of the project I want to implement:
 - SDL2
 - SDL2_ttf
 
+## Compilation
+
+The project contains a CMakeLists.txt file which I setup to be used with my CLion project.
+You can also just compile it from the command line as detailed below (it is far easier on Linux).
+
+### Linux
+
+Just install SDL2 and SDL2_ttf via your package manager, on arch linux this is done 
+via pacman like,
+
+```shell
+pacman -s sdl2 sdl2_ttf
+```
+
+then cd into the project directory and either run cmake,
+
+```shell
+cmake .
+make
+```
+
+or just run the compilation command manually,
+
+```shell
+g++ ./src/*.cpp -I include -lSDL2 -lSDL2_ttf -o demo
+```
+
+### Windows
+
+Windows requires an environment to be setup for the compilation, either visual studio 
+or Mingw. On my machine I installed MSYS2 and installed SDL2 and SDL2_ttf into that. Once
+done you can run the command,
+
+```shell
+g++ ./src/*.cpp -I include -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -o demo
+```
+
+in the MSYS2 terminal.
+
 ## Resources
 
 The following (in no particular order) is a selection of resources I found most 
 helpful when researching for this project:
 
-[1]: http://www.cs.bath.ac.uk/~pjw/NOTES/75-ACG/ch6-projective.pdf
-[2]: https://www.uni-obuda.hu/journal/Mileff_Nehez_Dudra_63.pdf
-[3]: http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.162.1859&rep=rep1&type=pdf
-[4]: http://www.cs.gettysburg.edu/~ilinkin/courses/Fall-2014/cs373/handouts/papers/sh-rpc-74.pdf
-[5]: Introduction to 3G Game Programming with DirectX10 by Frank D.Luna
-[6]: Game Engine Architecture by Jason Gregory
+1. http://www.cs.bath.ac.uk/~pjw/NOTES/75-ACG/ch6-projective.pdf
+2. https://www.uni-obuda.hu/journal/Mileff_Nehez_Dudra_63.pdf
+3. http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.162.1859&rep=rep1&type=pdf
+4. http://www.cs.gettysburg.edu/~ilinkin/courses/Fall-2014/cs373/handouts/papers/sh-rpc-74.pdf
+5. Introduction to 3G Game Programming with DirectX10 by Frank D.Luna
+6. Game Engine Architecture by Jason Gregory
 
 ## License
 

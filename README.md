@@ -23,9 +23,6 @@ scene.
 
 https://www.youtube.com/watch?v=ZjEFwCRI4no&feature=youtu.be
 
-note: the file 'demo' in the repository is the compiled demonstration being 
-shown in the video linked above.
-
 ## Pipeline
 
 The pipeline is kept as simple as possible. The following details the stages of

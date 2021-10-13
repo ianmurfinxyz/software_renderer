@@ -118,6 +118,9 @@ g++ ./src/*.cpp -I include -lmingw32 -lSDL2main -lSDL2 -lSDL2_ttf -o demo
 
 in the MSYS2 terminal.
 
+**note: I have also uploaded a binary release of the windows version which can be downloaded
+from the github releases section.**
+
 ## Resources
 
 The following (in no particular order) is a selection of resources I found most 
